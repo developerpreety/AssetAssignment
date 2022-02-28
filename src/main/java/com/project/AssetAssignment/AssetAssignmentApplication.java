@@ -1,6 +1,6 @@
 package com.project.AssetAssignment;
 
-import com.project.AssetAssignment.Services.AssetServices;
+import com.project.AssetAssignment.service.AssetServices;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;

@@ -1,7 +1,7 @@
-package com.project.AssetAssignment.Controller;
+package com.project.AssetAssignment.controller;
 
-import com.project.AssetAssignment.Entities.Asset;
-import com.project.AssetAssignment.Services.AssetServices;
+import com.project.AssetAssignment.entity.Asset;
+import com.project.AssetAssignment.service.AssetServices;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,37 +17,37 @@ public class AssetController {
 
     @GetMapping("/assets")
     public List<Asset> getAsset(){
-        log.trace("Print all assets");
+        log.info("Print all assets");
         return assetServices.getAssets();
     }
     @GetMapping("/asset/{id}")
     public Asset getAssetById(@PathVariable Long id){
-        log.trace("Print asset by ID");
+        log.info("Print asset by ID");
         return assetServices.getAssetById(id);
     }
     @PostMapping("/asset")
     public Asset saveAsset(@RequestBody Asset asset){
-        log.trace("Add new Asset");
+        log.info("Add new Asset");
         return assetServices.saveAsset(asset);
     }
     @PostMapping("/assets")
     public List<Asset> saveAllAsset(@RequestBody List<Asset> assets){
-        log.trace("Add Assets");
+        log.info("Add Assets");
         return assetServices.saveAssets(assets);
     }
     @PutMapping("/asset")
     public Asset update(@RequestBody Asset asset){
-        log.trace("Update an asset");
+        log.info("Update an asset");
         return assetServices.updateAsset(asset);
     }
     @DeleteMapping("/asset")
     public String delete(@RequestBody Asset asset){
-        log.trace("Delete an asset");
+        log.info("Delete an asset");
         return assetServices.deleteAssetByName(asset);
     }
     @DeleteMapping("/asset/{id}")
     public String deleteById(@PathVariable Long id){
-        log.trace("Delete asset by ID");
+        log.info("Delete asset by ID");
         return assetServices.deleteAssetById(id);
     }
 }

@@ -1,12 +1,13 @@
-package com.project.AssetAssignment.Entities;
+package com.project.AssetAssignment.entity;
 
 
 import lombok.*;
 
 import javax.persistence.*;
-import java.util.Date;
 
-@Data
+import java.util.Date;
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
@@ -21,5 +22,12 @@ public class Asset {
     private Date Created_datetime;
     private String Updated_by;
     private Date Updated_datetime;
+
+
+
+
+
+
+
 
 }

@@ -1,7 +1,8 @@
-package com.project.AssetAssignment.Services;
+package com.project.AssetAssignment.service;
 
-import com.project.AssetAssignment.Entities.Asset;
-import com.project.AssetAssignment.Repository.AssetRepository;
+import com.project.AssetAssignment.entity.Asset;
+import com.project.AssetAssignment.exception.AssetNotFoundException;
+import com.project.AssetAssignment.repository.AssetRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,12 +20,16 @@ public class AssetServices {
         return assetRepository.saveAll(asset);
     }
     public Asset getAssetById(Long id){
+        if(id==0)
+            throw new AssetNotFoundException();
         return assetRepository.findById(id).orElseThrow(null);
     }
     public List<Asset> getAssets(){
         return assetRepository.findAll();
     }
     public String deleteAssetById(Long id){
+        if(id==0)
+            throw new AssetNotFoundException();
           assetRepository.deleteById(id);
           return "Asset removed!!" + id;
     }

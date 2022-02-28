@@ -1,6 +1,6 @@
-package com.project.AssetAssignment.Repository;
+package com.project.AssetAssignment.repository;
 
-import com.project.AssetAssignment.Entities.Asset;
+import com.project.AssetAssignment.entity.Asset;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface AssetRepository extends JpaRepository<Asset,Long> {
